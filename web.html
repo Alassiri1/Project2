@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1f4068, #162447);
+            color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            font-size: 1.2rem;
+            color: #e4e4e4;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 5px solid #e43f5a;
+        }
+
+        .card h2 {
+            color: #1f4068;
+            margin-top: 0;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills-list li {
+            background: #e1e8f0;
+            color: #1f4068;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .project-item {
+            background: #fafafa;
+            border: 1px solid #eaeaea;
+            padding: 20px;
+            margin-top: 15px;
+            border-radius: 6px;
+        }
+
+        .project-item h3 {
+            margin-top: 0;
+            color: #e43f5a;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #162447;
+            color: #fff;
+            font-size: 0.9rem;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="profile.png" alt="Profile Picture" class="profile-img">
+        <h1>Personal Portfolio</h1>
+        <p>Electrical Engineering Student & Front-End Developer</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>About Me</h2>
+            <p>I am an electrical engineering student passionate about programming logic, embedded systems, electronics design, and building interactive, responsive web interfaces.</p>
+        </div>
+
+        <div class="card">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>HTML5 & CSS3</li>
+                <li>Front-End Web Development</li>
+                <li>Circuit Simulation & Analysis</li>
+                <li>Embedded Systems (ESP32)</li>
+                <li>Practical Mechanics</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Engineering & Tech Projects</h2>
+            
+            <div class="project-item">
+                <h3>1. Smart Elevator Occupancy Management System</h3>
+                <p>An engineering design project utilizing an ESP32 microcontroller, ultrasonic sensors, and servo motors to manage elevator load and efficiency dynamically.</p>
+            </div>
+
+            <div class="project-item">
+                <h3>2. Multi-Stage BJT Amplifier Circuit</h3>
+                <p>Designed and simulated a two-stage BJT amplifier, calculated precise component values, and finalized the circuit layout for online printed circuit board (PCB) ordering.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Personal Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
