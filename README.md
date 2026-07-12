@@ -1,18 +1,9 @@
- Personal Portfolio Website
+# Front-End Task: Personal Website Design
 
-A simple, responsive, and modern personal portfolio website designed to showcase my technical skills and engineering projects. 
+Task Description
+The requirement was to create and design a simple, responsive personal front-end website using HTML and CSS to represent my skills and projects.
 
-Project Overview
-This project was created as part of a front-end web development task. It serves as a digital profile highlighting an academic background in Electrical Engineering alongside a strong interest in modern web technologies.
-
-Technologies Used
-**HTML5:** For structured and semantic web layout.
-**CSS3:** For modern styling, responsive typography, and clean layouts.
-
-Key Features
-* Clean, single-page presentation layout.
-* Highlighted section for embedded systems and electrical engineering design projects.
-* Categorized grid for core technical skills.
-* Fully mobile-responsive interface.
-
-
+What I Did
+**Web Page Structuring:** Built a clean layout using semantic HTML5 tags.
+**Modern CSS Styling:** Applied custom styles, a professional color palette, and aligned components seamlessly (including centering elements and creating a custom profile image container).
+**Content Customization:** Tailored the website sections to professionally present my technical skills and engineering projects.
