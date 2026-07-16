@@ -1,1 +1,8 @@
-https://cad.onshape.com/documents/b6da9d77776c78e17c9c862e/w/3ec1bd9e270d472f4793e05c/e/55278e3f5bc8460babc80e55?renderMode=0&uiState=6a5839e81745280725d51cd9
+Onshape Design Link: https://cad.onshape.com/documents/b6da9d77776c78e17c9c862e/w/3ec1bd9e270d472f4793e05c/e/55278e3f5bc8460babc80e55?renderMode=0&uiState=6a5839e81745280725d51cd9
+
+Task 2: Mechanical Part (Batman Logo Keychain)
+
+In this task, a 3D model of the Batman logo was created using Onshape. 
+
+Design Details:
+Thickness (Extrude): 2 mm
