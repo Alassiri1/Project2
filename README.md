@@ -2,10 +2,10 @@
 A simple web application that allows users to input their name and age, store the data into a MySQL database, display the records in a dynamic table, and toggle the status value (0 or 1) instantly without reloading the page.
 
 ## Technologies Used
-* Frontend: HTML5, CSS3, JavaScript (AJAX / XMLHttpRequest)
-* Backend: PHP
-* Database: MySQL
-* Hosting: InfinityFree
+Frontend: HTML5, CSS3, JavaScript (AJAX / XMLHttpRequest)
+Backend: PHP
+Database: MySQL
+Hosting: InfinityFree
 
 ## Implementation Steps
 1. **Webpage Design:** Created the structure and styled the form to fit in a single line using HTML and CSS.
