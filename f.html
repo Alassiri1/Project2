@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Webpage</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-inline { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+        table { border-collapse: collapse; width: 50%; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+        th { background-color: #f2f2f2; }
+        button { cursor: pointer; padding: 4px 8px; }
+    </style>
+</head>
+<body>
+
+    <form action="n.php" method="get" class="form-inline">
+        <input type="hidden" name="action" value="insert">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        
+        <label for="age">Age:</label>
+        <input type="text" id="age" name="age" placeholder="Your Age" required>
+        
+        <input type="submit" value="Submit">
+    </form> 
+
+    <hr>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+    </table>
+
+    <script>
+    function loadTable() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "n.php?action=get_users", true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                document.getElementById("table-body").innerHTML = xhr.responseText;
+            }
+        };
+        xhr.send();
+    }
+    window.onload = loadTable;
+
+    function toggleStatus(id) {
+        let statusElement = document.getElementById('status-' + id);
+        let currentStatus = parseInt(statusElement.innerText);
+        let newStatus = currentStatus === 0 ? 1 : 0;
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "n.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                if (xhr.responseText.trim() === "success") {
+                    statusElement.innerText = newStatus;
+                } else {
+                    alert("Error updating status.");
+                }
+            }
+        };
+        
+        xhr.send("action=toggle&id=" + id + "&status=" + newStatus);
+    }
+    </script>
+
+</body>
+</html>
