@@ -35,11 +35,3 @@ An Arduino Uno project simulated in Tinkercad to control 4 servo motors simultan
 * **Servo 2:** Ground -> (-) Rail | Power -> (+) Rail | Signal -> Pin **5**
 * **Servo 3:** Ground -> (-) Rail | Power -> (+) Rail | Signal -> Pin **6**
 * **Servo 4:** Ground -> (-) Rail | Power -> (+) Rail | Signal -> Pin **9**
-
----
-
-## Circuit Diagram
-
-![Circuit Diagram](circuit.png)
-
-*(Note: Save your Tinkercad screenshot as `circuit.png` in the same directory for it to display correctly).*
