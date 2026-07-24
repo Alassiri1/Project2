@@ -1,4 +1,3 @@
-تفضل هذا هو النص جاهز ومباشر نسخ ولصق على طول بدون أي تعديل
 # Real-Time Color Detection & Recognition
 
 A Computer Vision application built with Python and OpenCV to detect and label primary colors (Red, Green, Blue) in real time using webcam input.
