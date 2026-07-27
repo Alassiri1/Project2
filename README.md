@@ -5,8 +5,8 @@ This repository contains the initial mechanical design documentation for a four-
 ---
 
 ## 1. Chassis & Body Structure
-* **Overview:** Designed as a simple rectangular box-like frame to housing internal components such as the microcontroller, battery, and drivers.
-* **Suggested Materials:** Lightweight and high-rigidity plastics (e.g., 3D-printed PLA/ABS or Acrylic sheets) to minimize overall structural mass.
+Overview:** Designed as a simple rectangular box-like frame to housing internal components such as the microcontroller, battery, and drivers.
+Suggested Materials:** Lightweight and high-rigidity plastics (e.g., 3D-printed PLA/ABS or Acrylic sheets) to minimize overall structural mass.
 
 ---
 
