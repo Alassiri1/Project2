@@ -1,0 +1,94 @@
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiAP.h>
+#include <ESP32Servo.h>
+
+// إعدادات شبكة الـ Access Point
+const char *ssid = "ESP32_Control";
+const char *password = "123456789";
+
+// تعريف المنافذ بناءً على التوصيل النهائي
+const int SERVO_PIN = 26; // السيرفو موصل بـ IO26
+const int GREEN_LED = 27; // اللمبة الخضراء موصلة بـ IO27
+const int RED_LED   = 25; // اللمبة الحمراء موصلة بـ IO25
+
+Servo myServo;
+WiFiServer server(80);
+
+void setup() {
+  Serial.begin(115200);
+
+  // إعداد منافذ اللمبات كمخرجات
+  pinMode(GREEN_LED, OUTPUT);
+  pinMode(RED_LED, OUTPUT);
+
+  // الوضع الافتراضي عند التشغيل (إغلاق): اللمبة الحمراء تضيء والخضراء تنطفئ
+  digitalWrite(GREEN_LED, LOW);
+  digitalWrite(RED_LED, HIGH);
+
+  // إعداد السيرفو وتحديده على وضعية الإغلاق (زاوية 0)
+  myServo.attach(SERVO_PIN);
+  myServo.write(0);
+
+  // تشغيل شبكة الـ Access Point
+  WiFi.softAP(ssid, password);
+  IPAddress myIP = WiFi.softAPIP();
+  Serial.print("AP IP address: ");
+  Serial.println(myIP);
+
+  server.begin();
+}
+
+void loop() {
+  WiFiClient client = server.available(); // الفحص إذا كان هناك مستخدم متصل
+
+  if (client) {
+    String currentLine = "";
+    while (client.connected()) {
+      if (client.available()) {
+        char c = client.read();
+        if (c == '\n') {
+          if (currentLine.length() == 0) {
+            // إرسال استجابة HTTP
+            client.println("HTTP/1.1 200 OK");
+            client.println("Content-type:text/html");
+            client.println();
+
+            // تصميم صفحة الويب بأزرار التحكم
+            client.println("<!DOCTYPE html><html>");
+            client.println("<head><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+            client.println("<style>html { font-family: Helvetica; text-align: center;}");
+            client.println(".button { background-color: #4CAF50; border: none; color: white; padding: 16px 40px; font-size: 30px; margin: 4px; cursor: pointer; border-radius: 8px;}");
+            client.println(".button2 { background-color: #f44336;}</style></head>");
+            
+            client.println("<body><h1>ESP32 Servo Control</h1>");
+            client.println("<p><a href=\"/OPEN\"><button class=\"button\">OPEN</button></a></p>");
+            client.println("<p><a href=\"/CLOSE\"><button class=\"button button2\">CLOSE</button></a></p>");
+            client.println("</body></html>");
+            client.println();
+            break;
+          } else {
+            currentLine = "";
+          }
+        } else if (c != '\r') {
+          currentLine += c;
+        }
+
+        // عند الضغط على زر OPEN
+        if (currentLine.endsWith("GET /OPEN")) {
+          myServo.write(90);             // يتحرك السيرفو لوضعية الفتح
+          digitalWrite(GREEN_LED, HIGH); // تضيء اللمبة الخضراء
+          digitalWrite(RED_LED, LOW);    // تنطفئ اللمبة الحمراء
+        }
+
+        // عند الضغط على زر CLOSE
+        if (currentLine.endsWith("GET /CLOSE")) {
+          myServo.write(0);              // يرجع السيرفو لوضعية الإغلاق
+          digitalWrite(GREEN_LED, LOW);  // تنطفئ اللمبة الخضراء
+          digitalWrite(RED_LED, HIGH);   // تضيء اللمبة الحمراء
+        }
+      }
+    }
+    client.stop();
+  }
+}
