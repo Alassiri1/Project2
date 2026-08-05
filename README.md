@@ -1,10 +1,10 @@
-# Robot Dog Voice & Touch Control Panel 🤖🐶
+# Robot Dog Voice & Touch Control Panel 
 
 An interactive control interface developed for the robot dog, supporting both touch-based navigation and voice recognition (Speech-to-Text). It connects to a cloud-based MySQL database to update control commands in real-time, allowing an ESP32 microcontroller to retrieve and execute movement direction instructions.
 
 ---
 
-## 🚀 Features
+##  Features
 
 * **Modern UI:** Clean dark-mode dashboard styled with glassmorphism and active directional indicators.
 
@@ -21,7 +21,7 @@ An interactive control interface developed for the robot dog, supporting both to
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 * **Frontend:** HTML5, CSS3, JavaScript (Fetch API, Web Speech API).
 
@@ -38,7 +38,7 @@ An interactive control interface developed for the robot dog, supporting both to
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 ├── index.html          # Main Web Interface (Touch Pad & Voice Recognition)
@@ -51,7 +51,7 @@ An interactive control interface developed for the robot dog, supporting both to
 
 ---
 
-## 📝 System Workflow
+##  System Workflow
 
 1. **User Action:** The user triggers a movement command by tapping a directional button or uttering a voice command (e.g., "left").
 
